@@ -1,0 +1,177 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > Turmas</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example.escola</a>
+</div>
+
+<h1>Coverage Summary for Class: Turmas (org.example.escola)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Turmas</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    57,1%
+  </span>
+  <span class="absValue">
+    (8/14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    70%
+  </span>
+  <span class="absValue">
+    (14/20)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example.escola;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;
+&nbsp;public class Turmas {
+&nbsp;    private String nome;
+&nbsp;    private String sala;
+&nbsp;    private String horario;
+&nbsp;    private Integer ano;
+&nbsp;    private List&lt;Aluno&gt; alunos;
+&nbsp;    private List&lt;Disciplinas&gt; disciplinas;
+&nbsp;
+<b class="fc">&nbsp;    public Turmas() {</b>
+&nbsp;    }
+&nbsp;
+<b class="fc">&nbsp;    public Turmas(String nome, String sala, String horario, Integer ano, List&lt;Aluno&gt; alunos, List&lt;Disciplinas&gt; disciplinas) {</b>
+<b class="fc">&nbsp;        this.nome = nome;</b>
+<b class="fc">&nbsp;        this.sala = sala;</b>
+<b class="fc">&nbsp;        this.horario = horario;</b>
+<b class="fc">&nbsp;        this.ano = ano;</b>
+<b class="fc">&nbsp;        this.alunos = alunos;</b>
+<b class="fc">&nbsp;        this.disciplinas = disciplinas;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getNome() {
+<b class="fc">&nbsp;        return nome;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setNome(String nome) {
+<b class="nc">&nbsp;        this.nome = nome;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getSala() {
+<b class="fc">&nbsp;        return sala;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setSala(String sala) {
+<b class="nc">&nbsp;        this.sala = sala;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getHorario() {
+<b class="fc">&nbsp;        return horario;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setHorario(String horario) {
+<b class="nc">&nbsp;        this.horario = horario;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Integer getAno() {
+<b class="fc">&nbsp;        return ano;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setAno(Integer ano) {
+<b class="nc">&nbsp;        this.ano = ano;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;Aluno&gt; getAlunos() {
+<b class="fc">&nbsp;        return alunos;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setAlunos(List&lt;Aluno&gt; alunos) {
+<b class="nc">&nbsp;        this.alunos = alunos;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;Disciplinas&gt; getDisciplinas() {
+<b class="fc">&nbsp;        return disciplinas;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setDisciplinas(List&lt;Disciplinas&gt; disciplinas) {
+<b class="nc">&nbsp;        this.disciplinas = disciplinas;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-10-14 20:56</div>
+</div>
+</body>
+</html>
