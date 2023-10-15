@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.escola.Aluno;
 import org.example.escola.Boletim;
 import org.example.escola.Notas;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,18 +20,23 @@ public class BoletimTest {
 
     @Test
     void setAluno() {
-        boletim.setAluno("João");
+        Aluno aluno = new Aluno();
+        aluno.setNome("João");
+        boletim.setAluno(aluno);
         String resultadoEsperado = "João";
-        String resultadoRetornado = boletim.getAluno();
+        Aluno resultadoEncontrado = boletim.getAluno();
+        String resultadoRetornado = resultadoEncontrado.getNome();
         assertEquals (resultadoEsperado, resultadoRetornado);
     }
 
     @Test
     void getNota1() {
         List<Notas> notas = new ArrayList<>();
-        notas.add(new Notas("Ana", "Matemática", 1, 1, 9.0f));
-        notas.add(new Notas("Ana", "Matemática", 1, 2, 6.0f));
-        notas.add(new Notas("Ana", "Matemática", 1, 3, 0.0f));
+        Aluno aluno = new Aluno();
+        aluno.setNome("Carlos");
+        notas.add(new Notas(aluno, "Matemática", 1, 1, 9.0f));
+        notas.add(new Notas(aluno, "Matemática", 1, 2, 6.0f));
+        notas.add(new Notas(aluno, "Matemática", 1, 3, 0.0f));
         boletim.setNota(notas);
 
         Integer resultadoEsperado = 3;
@@ -41,9 +47,11 @@ public class BoletimTest {
     @Test
     void getNota2() {
         List<Notas> notas = new ArrayList<>();
-        notas.add(new Notas("Ana", "Matemática", 1, 1, 9.0f));
-        notas.add(new Notas("Ana", "Matemática", 1, 2, 6.0f));
-        notas.add(new Notas("Ana", "Matemática", 1, 3, 0.0f));
+        Aluno aluno = new Aluno();
+        aluno.setNome("Roberto");
+        notas.add(new Notas(aluno, "Matemática", 1, 1, 9.0f));
+        notas.add(new Notas(aluno, "Matemática", 1, 2, 6.0f));
+        notas.add(new Notas(aluno, "Matemática", 1, 3, 0.0f));
         boletim.setNota(notas);
 
         Float resultadoEsperado = 6.0f;
@@ -54,9 +62,11 @@ public class BoletimTest {
     @Test
     void getNota3() {
         List<Notas> notas = new ArrayList<>();
-        notas.add(new Notas("Ana", "Matemática", 1, 1, 9.0f));
-        notas.add(new Notas("Ana", "Matemática", 1, 2, 6.0f));
-        notas.add(new Notas("Ana", "Matemática", 1, 3, 0.0f));
+        Aluno aluno = new Aluno();
+        aluno.setNome("Roberto");
+        notas.add(new Notas(aluno, "Matemática", 1, 1, 9.0f));
+        notas.add(new Notas(aluno, "Matemática", 1, 2, 6.0f));
+        notas.add(new Notas(aluno, "Matemática", 1, 3, 0.0f));
         boletim.setNota(notas);
 
         Float resultadoEsperado = 0.0f;
@@ -75,9 +85,11 @@ public class BoletimTest {
     @Test
     void setMedia() {
         List<Notas> notas = new ArrayList<>();
-        notas.add(new Notas("Ana", "Matemática", 1, 1, 9.0f));
-        notas.add(new Notas("Ana", "Matemática", 1, 2, 6.0f));
-        notas.add(new Notas("Ana", "Matemática", 1, 3, 0.0f));
+        Aluno aluno = new Aluno();
+        aluno.setNome("Roberto");
+        notas.add(new Notas(aluno, "Matemática", 1, 1, 9.0f));
+        notas.add(new Notas(aluno, "Matemática", 1, 2, 6.0f));
+        notas.add(new Notas(aluno, "Matemática", 1, 3, 0.0f));
         boletim.setNota(notas);
         boletim.setMedia(boletim.calcularMediaAritmetica());
         Float resultadoEsperado = 5.0f;
@@ -87,16 +99,20 @@ public class BoletimTest {
 
     @Test
     void construtor_QuandoChamado_DeveAtribuirValoresCorretos1() {
-        String aluno = "João";
+        Aluno aluno = new Aluno();
+        aluno.setNome("Roberto");
         List<Notas> notas = new ArrayList<>();
         notas.add(new Notas(aluno,"Matemática", 1, 1, 10.0f));
         Float media = 10.0f;
 
         Boletim boletim = new Boletim(aluno, notas, media);
 
-        String resultadoEsperado = "João";
-        String resultadoRetornado = boletim.getAluno();
-        assertEquals (resultadoEsperado, resultadoRetornado);
+        String resultadoEsperado = "Roberto";
+        Aluno resultadoAchado = boletim.getAluno();
+
+        String resultadoEncotrado = resultadoAchado.getNome();
+
+        assertEquals (resultadoEsperado, resultadoEncotrado);
     }
 
     @Test
@@ -124,8 +140,10 @@ public class BoletimTest {
     @Test
     void calcularMediaAritmetica_QuandoNotasValidas_DeveRetornarMediaCorreta() {
         List<Notas> notas = new ArrayList<>();
-        notas.add(new Notas("José", "Matemática", 1, 1, 10.0f));
-        notas.add(new Notas("José", "Matemática", 1, 2, 8.0f));
+        Aluno aluno = new Aluno();
+        aluno.setNome("Paulo");
+        notas.add(new Notas(aluno, "Matemática", 1, 1, 10.0f));
+        notas.add(new Notas(aluno, "Matemática", 1, 2, 8.0f));
 
         Boletim boletim = new Boletim();
         boletim.setNota(notas);
@@ -140,9 +158,11 @@ public class BoletimTest {
     @Test
     void calcularMediaAritmetica_QuandoNotasValidas_DeveCalcularCorretamente() {
         List<Notas> notas = new ArrayList<>();
-        notas.add(new Notas("Aluno1", "Disciplina1", 1, 1, 7.5f));
-        notas.add(new Notas("Aluno1", "Disciplina1", 1, 2, 8.0f));
-        notas.add(new Notas("Aluno1", "Disciplina1", 1, 3, 9.0f));
+        Aluno aluno = new Aluno();
+        aluno.setNome("Lucas");
+        notas.add(new Notas(aluno, "Disciplina1", 1, 1, 7.5f));
+        notas.add(new Notas(aluno, "Disciplina1", 1, 2, 8.0f));
+        notas.add(new Notas(aluno, "Disciplina1", 1, 3, 9.0f));
         boletim.setNota(notas);
 
         float mediaEsperada = (7.5f + 8.0f + 9.0f) / 3;
@@ -154,9 +174,11 @@ public class BoletimTest {
     @Test
     void calcularMediaAritmetica_QuandoUmaNotaZerada_DeveCalcularCorretamente() {
         List<Notas> notas = new ArrayList<>();
-        notas.add(new Notas("Aluno1", "Disciplina1", 1, 1, 7.5f));
-        notas.add(new Notas("Aluno1", "Disciplina1", 1, 2, 0.0f));
-        notas.add(new Notas("Aluno1", "Disciplina1", 1, 3, 9.0f));
+        Aluno aluno = new Aluno();
+        aluno.setNome("Renata");
+        notas.add(new Notas(aluno, "Disciplina1", 1, 1, 7.5f));
+        notas.add(new Notas(aluno, "Disciplina1", 1, 2, 0.0f));
+        notas.add(new Notas(aluno, "Disciplina1", 1, 3, 9.0f));
         boletim.setNota(notas);
 
         float mediaEsperada = (7.5f + 0.0f + 9.0f) / 3;

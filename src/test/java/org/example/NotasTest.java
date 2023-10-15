@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.escola.Aluno;
 import org.example.escola.Notas;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,15 +15,21 @@ public class NotasTest {
 
     @Test
     public void testGetAluno() {
-        Notas nota = new Notas("João", "Matemática", 1, 1, 9.5f);
-        String resultadoEsperado = "João";
-        String resultadoRetornado = nota.getAluno();
-        assertEquals (resultadoEsperado, resultadoRetornado);
-    }
+        Aluno aluno = new Aluno();
+        aluno.setNome("João");
+        nota.setAluno(aluno);
 
+        String resultadoEsperado = "João";
+        Aluno nomeRetornado = nota.getAluno();
+
+        String resultadoRetornado = nomeRetornado.getNome();
+        assertEquals(resultadoEsperado, resultadoRetornado);
+    }
     @Test
     public void testGetDisciplina() {
-        Notas nota = new Notas("Maria", "Português", 2, 2, 8.0f);
+        Aluno aluno = new Aluno();
+        aluno.setNome("Maria");
+        Notas nota = new Notas(aluno, "Português", 2, 2, 8.0f);
         String resultadoEsperado = "Português";
         String resultadoRetornado = nota.getDisciplina();
         assertEquals (resultadoEsperado, resultadoRetornado);
@@ -30,7 +37,9 @@ public class NotasTest {
 
     @Test
     public void testGetAvaliacao() {
-        Notas nota = new Notas("Pedro", "História", 1, 3, 7.2f);
+        Aluno aluno = new Aluno();
+        aluno.setNome("Robson");
+        Notas nota = new Notas(aluno, "História", 1, 3, 7.2f);
         Integer resultadoEsperado = 3;
         Integer resultadoRetornado = nota.getAvaliacao();
         assertEquals (resultadoEsperado, resultadoRetornado);
@@ -38,7 +47,9 @@ public class NotasTest {
 
     @Test
     public void testGetUnidade() {
-        Notas nota = new Notas("Mariana", "Geografia", 2, 1, 9.0f);
+        Aluno aluno = new Aluno();
+        aluno.setNome("Paulo");
+        Notas nota = new Notas(aluno, "Geografia", 2, 1, 9.0f);
         Integer resultadoEsperado = 2;
         Integer resultadoRetornado = nota.getUnidade();
         assertEquals (resultadoEsperado, resultadoRetornado);
@@ -46,17 +57,23 @@ public class NotasTest {
 
     @Test
     public void testGetNota() {
-        Notas nota = new Notas("Carlos", "Inglês", 3, 2, 8.7f);
+        Aluno aluno = new Aluno();
+        aluno.setNome("Carlos");
+        Notas nota = new Notas(aluno, "Inglês", 3, 2, 8.7f);
         Float resultadoEsperado = 8.7f;
         Float resultadoRetornado = nota.getNota();
         assertEquals (resultadoEsperado, resultadoRetornado, 0.001);
     }
 
+
     @Test
     public void testSetAluno() {
-        nota.setAluno("Paulo");
+        Aluno aluno = new Aluno();
+        aluno.setNome("Paulo");
+        nota.setAluno(aluno);
         String resultadoEsperado = "Paulo";
-        String resultadoRetornado = nota.getAluno();
+        Aluno resultadoEncontrado = nota.getAluno();
+        String resultadoRetornado = resultadoEncontrado.getNome();
         assertEquals (resultadoEsperado, resultadoRetornado);
     }
 
