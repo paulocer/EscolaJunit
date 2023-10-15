@@ -3,24 +3,24 @@ package org.example.escola;
 import java.util.List;
 
 public class Boletim {
-    private String aluno;
+    private Aluno aluno;
     private List<Notas> nota;
     private Float media;
 
     public Boletim() {
     }
 
-    public Boletim(String aluno, List<Notas> nota, Float media) {
+    public Boletim(Aluno aluno, List<Notas> nota, Float media) {
         this.aluno = aluno;
         this.nota = nota;
         this.media = media;
     }
 
-    public String getAluno() {
+    public Aluno getAluno() {
         return aluno;
     }
 
-    public void setAluno(String aluno) {
+    public void setAluno(Aluno aluno) {
         this.aluno = aluno;
     }
 

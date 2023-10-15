@@ -2,7 +2,7 @@ package org.example.escola;
 
 public class Notas {
 
-    private String aluno;
+    private Aluno aluno;
     private String disciplina;
     private int unidade;
     private int avaliacao;
@@ -11,7 +11,9 @@ public class Notas {
     public Notas() {
     }
 
-    public Notas(String aluno, String disciplina, int unidade, int avaliacao, float nota) {
+
+
+    public Notas(Aluno aluno, String disciplina, int unidade, int avaliacao, float nota) {
         this.aluno = aluno;
         this.disciplina = disciplina;
         this.unidade = unidade;
@@ -19,11 +21,11 @@ public class Notas {
         this.nota = nota;
     }
 
-    public String getAluno() {
+    public Aluno getAluno() {
         return aluno;
     }
 
-    public void setAluno(String aluno) {
+    public void setAluno(Aluno aluno) {
         this.aluno = aluno;
     }
 
@@ -58,4 +60,7 @@ public class Notas {
     public void setNota(float nota) {
         this.nota = nota;
     }
+
+
+
 }
